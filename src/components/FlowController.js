@@ -23,37 +23,36 @@ const controllerReducer = (state, action) => {
 
 const FlowController = ({
   steps,
+  title,
   enabled,
+  onFinish,
 }) => {
 
   const [state, dispatch] = useReducer(controllerReducer, initControllerState)
 
-  return (
+  return enabled ?
     <div className="flow-controller-body">
-      {
-        enabled &&
-        <div>
-          <HashRouter hashType="noslash">
-            <FlowControllerSteps
-              steps={steps}
-              enabled={enabled}
-              />
-          </HashRouter>
-        </div>
-      }
-    </div>
-  )
+      <span>{title}</span>
+      <HashRouter hashType="noslash">
+        <FlowControllerSteps
+          steps={steps}
+          enabled={enabled}
+          onFinish={onFinish}
+          />
+      </HashRouter>
+    </div> : null
 }
 
 FlowController.propTypes = {
   steps: PropTypes.arrayOf(PropTypes.shape({
     component: PropTypes.element,
-    props: PropTypes.object,
     label: PropTypes.string,
     link: PropTypes.string,
-    isVerified: PropTypes.bool,
+    isCompleted: PropTypes.bool,
   })),
   enabled: PropTypes.bool.isRequired,
+  title: PropTypes.string,
+  onFinish: PropTypes.func.isRequired,
 }
 
 export default FlowController

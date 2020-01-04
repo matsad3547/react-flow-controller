@@ -36,7 +36,7 @@ const ExampleStep1 = ({setStep1}) => {
 const styles = {
   root: {
     padding: '2em',
-    border: '1px solid gray',
+    // border: '1px solid gray',
   },
   buttons: {
     display: 'inline-flex',

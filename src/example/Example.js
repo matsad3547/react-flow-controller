@@ -5,6 +5,8 @@ import ExampleStep1 from './ExampleStep1'
 
 import FlowController from '../components/'
 
+import './Example.css'
+
 const Example = () => {
 
   const [stepsEnabled, setStepsEnabled] = useState(false)
@@ -34,8 +36,10 @@ const Example = () => {
             component: ExampleStep1({setStep1}),
             label: 'Step 1',
             link: 'step_1',
+            isCompleted: step1Value !== null,
           }
         ]}
+        onFinish={() => setStepsEnabled(false)}
         />
     </div>
   )

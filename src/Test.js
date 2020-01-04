@@ -1,11 +1,9 @@
 import React from 'react'
 import {
   HashRouter,
-  // BrowserRouter,
   Route,
   Switch,
   NavLink,
-  useHistory,
 } from 'react-router-dom'
 
 const Home = () => (<div>Home</div>)
@@ -14,10 +12,6 @@ const Test2 = () => (<div>Test 2</div>)
 const Test3 = () => (<div>Test 3</div>)
 
 const Routes = () => {
-
-  let history = useHistory()
-
-  console.log('history:', history.location, 'window hash?', window.location.hash);
 
   const steps = [
     {
