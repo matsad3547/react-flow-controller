@@ -18,3 +18,4 @@ The purpose of this package is the following:
 * Redirect to last verified step if attempting to navigate to an unverified step.
 * Include a progress indicator that can also link to previous steps
 * Handle errors gracefully
+* Last step will have a button labeled "FINISH"
