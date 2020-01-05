@@ -8,16 +8,24 @@ import {
 const ProgressIndicator = ({
   origin,
   steps,
+  completionIndicator,
 }) => {
+
   return (
-    <div className="progress-indicator-root">
+    <div className="fc-pi-root">
       {
-        steps.map( step => <NavLink
-          exact
-          to={`${origin}/${step.link}`}
-          className="progress-indicator-step"
-          activeClassName="progress-indicator-active-step"
-          key={`${step.link}-step`}>{step.label}</NavLink>
+        steps.map( step =>
+          <NavLink
+            exact
+            to={`${origin}/${step.link}`}
+            className="fc-pi-step-link"
+            activeClassName="fc-pi-active-step-link"
+            key={`${step.link}-step`}
+            >
+            <div className="fc-pi-step">
+              {step.label} {completionIndicator({isCompleted: step.isCompleted})}
+            </div>
+          </NavLink>
         )
       }
     </div>
@@ -25,7 +33,9 @@ const ProgressIndicator = ({
 }
 
 ProgressIndicator.propTypes = {
+  origin: PropTypes.string.isRequired,
   steps: PropTypes.array.isRequired,
+  completionIndicator: PropTypes.elementType.isRequired,
 }
 
 export default ProgressIndicator

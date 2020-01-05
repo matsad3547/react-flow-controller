@@ -14,25 +14,25 @@ const FlowControllerStep = ({
 }) => {
 
   return (
-    <div className="flow-controller-step">
+    <div className="fc-step">
       {component}
-      <div className={isFirst ? 'flow-controller-single-btn' : 'flow-controller-btns'}>
+      <div className={isFirst ? 'fc-single-btn' : 'fc-btns'}>
         {
           !isFirst &&
           <button
             type="button"
-            className={isCompleted ? 'flow-controller-back-btn' : 'flow-controller-btn-disabled'} onClick={onBackClick}>BACK</button>
+            className={isCompleted ? 'fc-back-btn' : 'fc-btn-disabled'} onClick={onBackClick}>BACK</button>
         }
         {
           isLast ?
           <button
             type="button"
-            className={areAllCompleted ? 'flow-controller-finish-btn' : 'flow-controller-btn-disabled'}
+            className={areAllCompleted ? 'fc-finish-btn' : 'fc-btn-disabled'}
             disabled={!areAllCompleted}
             onClick={onFinishClick}>FINISH</button> :
           <button
             type="button"
-            className={isCompleted ? 'flow-controller-next-btn' : 'flow-controller-btn-disabled'}
+            className={isCompleted ? 'fc-next-btn' : 'fc-btn-disabled'}
             disabled={!isCompleted}
             onClick={onNextClick}>NEXT</button>
           }

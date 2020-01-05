@@ -5,7 +5,6 @@ import {
   Switch,
   Route,
   Redirect,
-  useLocation,
 } from 'react-router-dom'
 
 import FlowControllerStep from './FlowControllerStep'
@@ -14,21 +13,20 @@ import ProgressIndicator from './ProgressIndicator'
 const FlowController = ({
   steps,
   title,
+  completionIndicator,
   match,
   history,
 }) => {
 
-  const {
-    path,
-  } = match
+  const { path } = match
+
+  const { pathname } = history.location
 
   const origin = path === '/' ? '' : path
 
   const links = steps.map( step => step.link )
 
-  let { pathname } = useLocation()
-
-  const showFlowController = links.map( link => pathname.includes(link)).some( test => test)
+  const showFlowController = links.map( link => pathname.includes(link)).some( test => test )
 
   const onBackClick = index => {
     history.push(`${origin}/${steps[index - 1].link}`)
@@ -47,11 +45,12 @@ const FlowController = ({
   const areAllCompleted = steps.every( step => step.isCompleted)
 
   return showFlowController ? (
-    <div className="flow-controller-root">
-      <span className="flow-controller-title">{title}</span>
+    <div className="fc-root">
+      <span className="fc-title">{title}</span>
       <ProgressIndicator
         steps={steps}
         origin={origin}
+        completionIndicator={completionIndicator}
         />
       <Switch>
         {
@@ -80,6 +79,7 @@ const FlowController = ({
 FlowController.propTypes = {
   steps: PropTypes.array.isRequired,
   title: PropTypes.string,
+  completionIndicator: PropTypes.elementType.isRequired,
   match: PropTypes.object.isRequired,
   history: PropTypes.object.isRequired,
 }

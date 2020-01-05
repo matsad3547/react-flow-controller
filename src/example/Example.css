@@ -1,4 +1,4 @@
-.flow-controller-root {
+.fc-root {
   position: absolute;
   background: lightblue;
   border: 1px solid gray;
@@ -6,51 +6,75 @@
   left: 2em;
   width: 50vw;
   padding: 1em;
+  border-radius: 2px;
 }
 
-.flow-controller-title {
+.fc-title {
   font-size: 2em;
 }
 
-.flow-controller-single-btn, .flow-controller-btns {
+.fc-single-btn, .fc-btns {
   padding: 1em 0 0;
 }
 
-.flow-controller-single-btn {
+.fc-single-btn {
   display: inline-flex;
   width: 100%;
   justify-content: flex-end;
 }
 
-.flow-controller-btns {
+.fc-btns {
   display: inline-flex;
   width: 100%;
   justify-content: space-between;
 }
 
-.flow-controller-back-btn, .flow-controller-next-btn, .flow-controller-finish-btn {
+.fc-back-btn, .fc-next-btn, .fc-finish-btn {
   cursor: pointer;
 }
-.flow-controller-btn-disabled {
+.fc-btn-disabled {
   cursor: not-allowed;
 }
 
-.flow-controller-back-btn, .flow-controller-next-btn, .flow-controller-finish-btn, .flow-controller-btn-disabled {
+.fc-back-btn, .fc-next-btn, .fc-finish-btn, .fc-btn-disabled {
   padding: .5em;
   border-radius: 5px;
 }
 
-.progress-indicator-root {
+.fc-pi-root {
   width: 100%;
   display: inline-flex;
   justify-content: space-between;
 }
 
-.progress-indicator-step {
+.fc-pi-step {
+  display: inline-flex;
+}
+
+.fc-pi-step-link {
   color: blue;
   text-decoration: none;
 }
 
-.progress-indicator-active-step {
+.fc-pi-active-step-link {
   color: red;
+}
+
+.fc-pi-completion-indicator {
+  margin-left: 5px;
+  height: 20px;
+  width: 20px;
+
+  border-radius: 20px;
+  text-align: center;
+}
+
+.fc-pi-step-complete {
+  border: 1px solid blue;
+  color: blue;
+}
+
+.fc-pi-step-incomplete {
+  border: 1px solid gray;
+  color: gray;
 }

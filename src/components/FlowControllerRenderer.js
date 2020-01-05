@@ -5,10 +5,12 @@ import {
 } from 'react-router-dom'
 
 import FlowController from './FlowController'
+import BasicCompletionIndicator from './BasicCompletionIndicator'
 
 const FlowControllerRenderer = ({
   steps,
   title = '',
+  completionIndicator = BasicCompletionIndicator
 }) => {
 
   return (
@@ -18,6 +20,7 @@ const FlowControllerRenderer = ({
         title={title}
         match={match}
         history={history}
+        completionIndicator={completionIndicator}
         />
       }/>
   )
