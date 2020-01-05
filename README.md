@@ -1,6 +1,6 @@
 ## React Flow Controller
 
-The flow controller is a component that consists of several steps and dictates the order that the steps can be used, notifies the user of the current progress through the steps, and what steps are remaining.  
+The Flow Controller is a component that consists of several steps and dictates the order that the steps can be used, notifies the user of the current progress through the steps, and what steps are remaining.  
 
 ### Purpose
 
@@ -49,6 +49,9 @@ React Flow Controller is agnostic to the functioning of the individual step comp
 * All the elements of the Flow Controller have CSS class names to enable whatever sort of styling is desired.  
 * The example included shows how these classes may be used.
 * When I get there, I will add in some possible base style sheets that can be used as defaults.
+
+### Examples
+Examples are coming soon!
 
 ### MVP Features
 * Enable adding or removing the controller
