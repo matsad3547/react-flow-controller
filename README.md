@@ -48,7 +48,7 @@ React Flow Controller is agnostic to the functioning of the individual step comp
 #### Styling
 * All the elements of the Flow Controller have CSS class names to enable whatever sort of styling is desired.  
 * The example included shows how these classes may be used.
-* When I get there, I will add in some possible base style sheets that can be used as defaults.
+* There is a default styles `.css` file included - import it with `import react-flow-controller/dist/DefaultStyles.css`
 
 ### Examples
 Examples are coming soon!

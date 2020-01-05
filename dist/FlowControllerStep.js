@@ -18,7 +18,7 @@ const FlowControllerStep = ({
     className: isFirst ? 'fc-single-btn' : 'fc-btns'
   }, !isFirst && React.createElement("button", {
     type: "button",
-    className: isCompleted ? 'fc-back-btn' : 'fc-btn-disabled',
+    className: "fc-back-btn",
     onClick: onBackClick
   }, "BACK"), isLast ? React.createElement("button", {
     type: "button",

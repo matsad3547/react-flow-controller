@@ -1,0 +1,92 @@
+.fc-root {
+  position: absolute;
+  background: white;
+  border: 1px solid lightgray;
+  top: 2em;
+  left: 2em;
+  width: 50vw;
+  padding: 1em;
+  border-radius: 2px;
+}
+
+.fc-title {
+  font-size: 2em;
+}
+
+.fc-single-btn, .fc-btns {
+  padding: 1em 0 0;
+}
+
+.fc-single-btn {
+  display: inline-flex;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.fc-btns {
+  display: inline-flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.fc-back-btn, .fc-next-btn, .fc-finish-btn {
+  cursor: pointer;
+  color: #303030;
+  border: 1px solid #303030;
+}
+.fc-btn-disabled {
+  cursor: not-allowed;
+}
+
+.fc-back-btn, .fc-next-btn, .fc-finish-btn, .fc-btn-disabled {
+  padding: .5em;
+  border-radius: 2px;
+}
+
+.fc-pi-root {
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-between;
+}
+
+.fc-pi-step {
+  display: inline-flex;
+}
+
+.fc-pi-step-link, .fc-pi-active-step-link {
+  padding: .5em;
+}
+
+.fc-pi-step-link {
+  color: #303030;
+  text-decoration: none;
+}
+
+.fc-pi-completion-indicator {
+  margin-left: 5px;
+  height: 20px;
+  width: 20px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.fc-pi-step-complete {
+  border: 1px solid #303030;
+  color: #303030;
+}
+
+.fc-pi-step-incomplete {
+  border: 1px solid gray;
+  color: gray;
+}
+
+.fc-pi-active-step-link {
+  color: #303030;
+  background: lightgray;
+  border-radius: 2px;
+}
+
+.fc-pi-active-step-link .fc-pi-step-complete {
+  border: 1px solid #303030;
+  color: #303030;
+}
