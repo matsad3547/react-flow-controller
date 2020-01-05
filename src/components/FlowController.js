@@ -1,4 +1,6 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+
 import {
   Switch,
   Route,
@@ -11,6 +13,7 @@ import ProgressIndicator from './ProgressIndicator'
 
 const FlowController = ({
   steps,
+  title,
   match,
   history,
 }) => {
@@ -45,7 +48,8 @@ const FlowController = ({
 
   return showFlowController ? (
     <div className="flow-controller-root">
-      <ProgressIndicator/>
+      <span className="flow-controller-title">{title}</span>
+      <ProgressIndicator steps={steps}/>
       <Switch>
         {
           steps.map( (step, index) => <Route exact path={`${origin}/${step.link}`} render={() => index <= firstAvailableStepIndex ?
@@ -68,6 +72,13 @@ const FlowController = ({
         </Switch>
     </div>
   ) : null
+}
+
+FlowController.propTypes = {
+  steps: PropTypes.array.isRequired,
+  title: PropTypes.string,
+  match: PropTypes.object.isRequired,
+  history: PropTypes.object.isRequired,
 }
 
 export default FlowController

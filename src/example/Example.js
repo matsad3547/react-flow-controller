@@ -52,6 +52,7 @@ const ExampleValues = () => {
       <h2>Step 3 Value</h2>
       <div style={step3Value && getValueStyle(step3Value.color)}>{step3Value ? step3Value.label : "?"}</div>
       <FlowControllerRenderer
+        title="Choose Colors"
         steps={[
           {
             component: ExampleStep1({setStep1}),

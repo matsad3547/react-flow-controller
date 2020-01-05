@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const FlowControllerStep = ({
   component,
@@ -38,6 +39,18 @@ const FlowControllerStep = ({
       </div>
     </div>
   )
+}
+
+FlowControllerStep.propTypes = {
+  component: PropTypes.element.isRequired,
+  index: PropTypes.number.isRequired,
+  isCompleted: PropTypes.bool.isRequired,
+  isFirst: PropTypes.bool.isRequired,
+  isLast: PropTypes.bool.isRequired,
+  onBackClick: PropTypes.func.isRequired,
+  onNextClick: PropTypes.func.isRequired,
+  areAllCompleted: PropTypes.bool.isRequired,
+  onFinishClick: PropTypes.func.isRequired,
 }
 
 export default FlowControllerStep

@@ -8,12 +8,14 @@ import FlowController from './FlowController'
 
 const FlowControllerRenderer = ({
   steps,
+  title = '',
 }) => {
-  
+
   return (
     <Route render={
       ({match, history}) => <FlowController
         steps={steps}
+        title={title}
         match={match}
         history={history}
         />

@@ -8,8 +8,18 @@
   padding: 1em;
 }
 
+.flow-controller-title {
+  font-size: 2em;
+}
+
 .flow-controller-single-btn, .flow-controller-btns {
   padding: 1em 0 0;
+}
+
+.flow-controller-single-btn {
+  display: inline-flex;
+  width: 100%;
+  justify-content: flex-end;
 }
 
 .flow-controller-btns {
