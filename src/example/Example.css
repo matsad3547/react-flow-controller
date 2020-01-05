@@ -1,8 +1,31 @@
-.flow-controller-body {
+.flow-controller-step {
   position: absolute;
   background: lightblue;
   border: 1px solid gray;
   top: 2em;
   left: 2em;
   width: 50vw;
+  padding: 1em;
+}
+
+.flow-controller-single-btn, .flow-controller-btns {
+  padding: 1em 0 0;
+}
+
+.flow-controller-btns {
+  display: inline-flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.flow-controller-back-btn, .flow-controller-next-btn, .flow-controller-finish-btn {
+  cursor: pointer;
+}
+.flow-controller-btn-disabled {
+  cursor: not-allowed;
+}
+
+.flow-controller-back-btn, .flow-controller-next-btn, .flow-controller-finish-btn, .flow-controller-btn-disabled {
+  padding: .5em;
+  border-radius: 5px;
 }

@@ -35,7 +35,6 @@ const ExampleStep2 = ({setStep2}) => {
 
 const styles = {
   root: {
-    padding: '2em',
   },
   buttons: {
     width: '100%',

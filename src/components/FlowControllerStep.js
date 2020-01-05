@@ -14,10 +14,12 @@ const FlowControllerStep = ({
   return (
     <div className="flow-controller-step">
       {component}
-      <div className="flow-controller-btns">
+      <div className={isFirst ? 'flow-controller-single-btn' : 'flow-controller-btns'}>
         {
           !isFirst &&
-          <button type="button" className="flow-controller-back-btn" onClick={onBackClick}>BACK</button>
+          <button
+            type="button"
+            className={isCompleted ? 'flow-controller-back-btn' : 'flow-controller-btn-disabled'} onClick={onBackClick}>BACK</button>
         }
         {
           isLast ?

@@ -1,9 +1,8 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import {
   Switch,
   Route,
   useHistory,
-  useLocation,
 } from 'react-router-dom'
 
 import FlowControllerStep from './FlowControllerStep'
@@ -11,18 +10,9 @@ import FlowControllerStep from './FlowControllerStep'
 const FlowControllerSteps = ({
   enabled,
   steps,
-  onFinish,
 }) => {
 
   let history = useHistory()
-
-  console.log('window location?', window.location.origin );
-
-  useEffect( () => {
-    if (enabled) {
-      history.push(`/${steps[0].link}`)
-    }
-  }, [history, steps, enabled])
 
   const onBackClick = index => {
     history.push(`/${steps[index - 1].link}`)
@@ -34,8 +24,7 @@ const FlowControllerSteps = ({
 
   const onFinishClick = () => {
     history.push('/')
-    onFinish()
-   }
+  }
 
   return (
     <Switch>
@@ -53,6 +42,7 @@ const FlowControllerSteps = ({
         }
         key={`${step.link}-route`}/>)
       }
+      <Route component={null}/>
     </Switch>
   )
 }
