@@ -1,9 +1,26 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const ProgressIndicator = ({steps}) => {
+import {
+  NavLink,
+} from 'react-router-dom'
+
+const ProgressIndicator = ({
+  origin,
+  steps,
+}) => {
   return (
-    <div className="progress-indicator-root">Progress Indicator</div>
+    <div className="progress-indicator-root">
+      {
+        steps.map( step => <NavLink
+          exact
+          to={`${origin}/${step.link}`}
+          className="progress-indicator-step"
+          activeClassName="progress-indicator-active-step"
+          key={`${step.link}-step`}>{step.label}</NavLink>
+        )
+      }
+    </div>
   )
 }
 

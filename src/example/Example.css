@@ -41,6 +41,16 @@
 }
 
 .progress-indicator-root {
-  color: white;
-  background: blue;
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-between;
+}
+
+.progress-indicator-step {
+  color: blue;
+  text-decoration: none;
+}
+
+.progress-indicator-active-step {
+  color: red;
 }

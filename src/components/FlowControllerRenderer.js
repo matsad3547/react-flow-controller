@@ -25,11 +25,11 @@ const FlowControllerRenderer = ({
 
 FlowControllerRenderer.propTypes = {
   steps: PropTypes.arrayOf(PropTypes.shape({
-    component: PropTypes.element,
-    label: PropTypes.string,
-    link: PropTypes.string,
-    isCompleted: PropTypes.bool,
-  })),
+    component: PropTypes.element.isRequired,
+    label: PropTypes.string.isRequired,
+    link: PropTypes.string.isRequired,
+    isCompleted: PropTypes.bool.isRequired,
+  })).isRequired,
   title: PropTypes.string,
 }
 

@@ -49,7 +49,10 @@ const FlowController = ({
   return showFlowController ? (
     <div className="flow-controller-root">
       <span className="flow-controller-title">{title}</span>
-      <ProgressIndicator steps={steps}/>
+      <ProgressIndicator
+        steps={steps}
+        origin={origin}
+        />
       <Switch>
         {
           steps.map( (step, index) => <Route exact path={`${origin}/${step.link}`} render={() => index <= firstAvailableStepIndex ?
