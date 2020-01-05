@@ -11,7 +11,7 @@ import ExampleStep3 from './ExampleStep3'
 
 import FlowControllerRenderer from '../components/'
 
-import './Example.css'
+import '../components/DefaultStyles.css'
 
 const Example = () => {
 

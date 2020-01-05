@@ -21,7 +21,7 @@ const FlowControllerStep = ({
           !isFirst &&
           <button
             type="button"
-            className={isCompleted ? 'fc-back-btn' : 'fc-btn-disabled'} onClick={onBackClick}>BACK</button>
+            className="fc-back-btn" onClick={onBackClick}>BACK</button>
         }
         {
           isLast ?
