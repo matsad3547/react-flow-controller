@@ -51,7 +51,8 @@ React Flow Controller is agnostic to the functioning of the individual step comp
 * There is a default styles `.css` file included - import it with `import react-flow-controller/dist/DefaultStyles.css`
 
 ### Examples
-Examples are coming soon!
+1. Example where the Flow Controller is nested within other routes
+* [Code Sandbox](https://codesandbox.io/s/react-flow-controller-ohir0)
 
 ### MVP Features
 * Enable adding or removing the controller
