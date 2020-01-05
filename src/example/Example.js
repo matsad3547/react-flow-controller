@@ -7,6 +7,7 @@ import {
 import Button from './Button'
 import ExampleStep1 from './ExampleStep1'
 import ExampleStep2 from './ExampleStep2'
+import ExampleStep3 from './ExampleStep3'
 
 import FlowController from '../components/'
 
@@ -47,6 +48,12 @@ const Example = () => {
               label: 'Step 2',
               link: 'step_2',
               isCompleted: step2Value !== null,
+            },
+            {
+              component: ExampleStep3({setStep3}),
+              label: 'Step 3',
+              link: 'step_3',
+              isCompleted: step3Value !== null,
             },
           ]}
           />

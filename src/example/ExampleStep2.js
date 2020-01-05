@@ -14,7 +14,7 @@ const ExampleStep2 = ({setStep2}) => {
 
   return (
     <div style={styles.root}>
-      <h2>Yellow or Purple?</h2>
+      <h2>Orange or Blue?</h2>
       <div style={styles.buttons}>
         <Button
           color="black"
