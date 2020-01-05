@@ -1,37 +1,16 @@
 import React, {useState} from 'react'
 import {
-  BrowserRouter,
   Link,
 } from 'react-router-dom'
+
+import FlowControllerRenderer from '../components/'
 
 import Button from './Button'
 import ExampleStep1 from './ExampleStep1'
 import ExampleStep2 from './ExampleStep2'
 import ExampleStep3 from './ExampleStep3'
 
-import FlowControllerRenderer from '../components/'
-
-import '../components/DefaultStyles.css'
-
-const Example = () => {
-
-  return (
-    <div>
-      <BrowserRouter>
-        <ExampleValues/>
-      </BrowserRouter>
-    </div>
-  )
-}
-
-const getValueStyle = color => ({
-  padding: '1em 2em',
-  border: `2px solid ${color}`,
-})
-
-export default Example
-
-const ExampleValues = () => {
+const UnnestedExampleValues = () => {
 
   const [step1Value, setStep1] = useState(null)
   const [step2Value, setStep2] = useState(null)
@@ -75,3 +54,10 @@ const ExampleValues = () => {
     </div>
   )
 }
+
+const getValueStyle = color => ({
+  padding: '1em 2em',
+  border: `2px solid ${color}`,
+})
+
+export default UnnestedExampleValues

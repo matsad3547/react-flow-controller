@@ -17,7 +17,7 @@ Run `$ yarn add react-flow-controller`
 #### Requirements
 1. React Flow Controller requires the use of React Router
 2. Run `yarn add react-router-dom` in your project
-3. If its is not already somewhere in your project, add a `<Router/>` - specifically [`BrowserRouter`](https://reacttraining.com/react-router/web/example/basic).  This component is needed in order to use [`<Link/>`]https://reacttraining.com/react-router/web/api/Link and link to the first step of your flow controller.
+3. If its is not already somewhere in your project, add a `<Router/>` - specifically [BrowserRouter](https://reacttraining.com/react-router/web/example/basic).  This component is needed in order to use [Link](https://reacttraining.com/react-router/web/api/Link) and link to the first step of your flow controller.
 
 #### Props
 1. `title` - optional string

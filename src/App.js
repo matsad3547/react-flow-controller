@@ -1,10 +1,13 @@
 import React from 'react'
 
-import Example from './example/'
+import {
+  UnnestedExample,
+  // NestedExample,
+} from './examples/'
 
 function App() {
   return (
-    <Example/>
+    <UnnestedExample/>
   )
 }
 
