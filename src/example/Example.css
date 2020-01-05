@@ -1,6 +1,6 @@
 .fc-root {
   position: absolute;
-  background: lightblue;
+  background: white;
   border: 1px solid gray;
   top: 2em;
   left: 2em;
@@ -51,20 +51,19 @@
   display: inline-flex;
 }
 
+.fc-pi-step-link, .fc-pi-active-step-link {
+  padding: .5em;
+}
+
 .fc-pi-step-link {
   color: blue;
   text-decoration: none;
-}
-
-.fc-pi-active-step-link {
-  color: red;
 }
 
 .fc-pi-completion-indicator {
   margin-left: 5px;
   height: 20px;
   width: 20px;
-
   border-radius: 20px;
   text-align: center;
 }
@@ -77,4 +76,14 @@
 .fc-pi-step-incomplete {
   border: 1px solid gray;
   color: gray;
+}
+
+.fc-pi-active-step-link {
+  color: white;
+  background: blue;
+}
+
+.fc-pi-active-step-link .fc-pi-step-complete {
+  border: 1px solid white;
+  color: white;
 }
