@@ -1,15 +1,15 @@
 import React from 'react'
 import Button from './Button'
 
-const ExampleStep1 = ({setStep1}) => {
+const ExampleStep2 = ({setStep2}) => {
 
-  const yellowVal = {
-    label: 'Yellow',
-    color: 'yellow',
+  const orangeVal = {
+    label: 'Orange',
+    color: 'orange',
   }
-  const purpleVal = {
-    label: 'Purple',
-    color: 'purple',
+  const blueVal = {
+    label: 'Blue',
+    color: 'blue',
   }
 
   return (
@@ -18,15 +18,15 @@ const ExampleStep1 = ({setStep1}) => {
       <div style={styles.buttons}>
         <Button
           color="black"
-          label="CHOOSE YELLOW"
-          background="yellow"
-          onClick={() => setStep1(yellowVal)}
+          label="CHOOSE ORANGE"
+          background="orange"
+          onClick={() => setStep2(orangeVal)}
           />
         <Button
           color="white"
-          label="CHOOSE PURPLE"
-          background="purple"
-          onClick={() => setStep1(purpleVal)}
+          label="CHOOSE BLUE"
+          background="blue"
+          onClick={() => setStep2(blueVal)}
           />
       </div>
     </div>
@@ -44,4 +44,4 @@ const styles = {
   }
 }
 
-export default ExampleStep1
+export default ExampleStep2

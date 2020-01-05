@@ -1,6 +1,6 @@
 import React, {useReducer} from 'react'
 import PropTypes from 'prop-types'
-import { HashRouter } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'
 
 import FlowControllerSteps from './FlowControllerSteps'
 
@@ -33,13 +33,13 @@ const FlowController = ({
   return enabled ?
     <div className="flow-controller-body">
       <span>{title}</span>
-      <HashRouter hashType="noslash">
+      <BrowserRouter >
         <FlowControllerSteps
           steps={steps}
           enabled={enabled}
           onFinish={onFinish}
           />
-      </HashRouter>
+      </BrowserRouter>
     </div> : null
 }
 

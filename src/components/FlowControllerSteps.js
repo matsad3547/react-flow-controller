@@ -15,9 +15,8 @@ const FlowControllerSteps = ({
 }) => {
 
   let history = useHistory()
-  let location = useLocation()
 
-  console.log('location??', location);
+  console.log('window location?', window.location.origin );
 
   useEffect( () => {
     if (enabled) {
@@ -25,12 +24,16 @@ const FlowControllerSteps = ({
     }
   }, [history, steps, enabled])
 
-  const onBackClick = () => console.log('go back')
+  const onBackClick = index => {
+    history.push(`/${steps[index - 1].link}`)
+  }
 
-  const onNextClick = () => console.log('go to next')
+  const onNextClick = index => {
+    history.push(`/${steps[index + 1].link}`)
+  }
 
   const onFinishClick = () => {
-    console.log('finish up')
+    history.push('/')
     onFinish()
    }
 
@@ -43,8 +46,8 @@ const FlowControllerSteps = ({
             index={index}
             isFirst={index === 0}
             isLast={index === steps.length - 1}
-            onBackClick={onBackClick}
-            onNextClick={onNextClick}
+            onBackClick={() => onBackClick(index)}
+            onNextClick={() => onNextClick(index)}
             onFinishClick={onFinishClick}
           />
         }

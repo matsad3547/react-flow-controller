@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 
 import Button from './Button'
 import ExampleStep1 from './ExampleStep1'
+import ExampleStep2 from './ExampleStep2'
 
 import FlowController from '../components/'
 
@@ -37,7 +38,13 @@ const Example = () => {
             label: 'Step 1',
             link: 'step_1',
             isCompleted: step1Value !== null,
-          }
+          },
+          {
+            component: ExampleStep2({setStep2}),
+            label: 'Step 2',
+            link: 'step_2',
+            isCompleted: step2Value !== null,
+          },
         ]}
         onFinish={() => setStepsEnabled(false)}
         />

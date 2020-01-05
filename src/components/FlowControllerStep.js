@@ -11,23 +11,23 @@ const FlowControllerStep = ({
   onFinishClick,
 }) => {
 
-  console.log({isCompleted});
-
   return (
     <div className="flow-controller-step">
       {component}
       <div className="flow-controller-btns">
         {
           !isFirst &&
-          <button className="flow-controller-back-btn" onClick={onBackClick}>BACK</button>
+          <button type="button" className="flow-controller-back-btn" onClick={onBackClick}>BACK</button>
         }
         {
           isLast ?
           <button
+            type="button"
             className={isCompleted ? 'flow-controller-finish-btn' : 'flow-controller-btn-disabled'}
             disabled={!isCompleted}
             onClick={onFinishClick}>FINISH</button> :
           <button
+            type="button"
             className={isCompleted ? 'flow-controller-next-btn' : 'flow-controller-btn-disabled'}
             disabled={!isCompleted}
             onClick={onNextClick}>NEXT</button>
