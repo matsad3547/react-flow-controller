@@ -19,6 +19,8 @@ const FlowController = ({
     path,
   } = match
 
+  const origin = path === '/' ? '' : path
+
   const links = steps.map( step => step.link )
 
   let { pathname } = useLocation()
@@ -26,11 +28,11 @@ const FlowController = ({
   const showFlowController = links.map( link => pathname.includes(link)).some( test => test)
 
   const onBackClick = index => {
-    history.push(`${path}/${steps[index - 1].link}`)
+    history.push(`${origin}/${steps[index - 1].link}`)
   }
 
   const onNextClick = index => {
-    history.push(`${path}/${steps[index + 1].link}`)
+    history.push(`${origin}/${steps[index + 1].link}`)
   }
 
   const onFinishClick = () => {
@@ -46,7 +48,7 @@ const FlowController = ({
       <ProgressIndicator/>
       <Switch>
         {
-          steps.map( (step, index) => <Route exact path={`${path}/${step.link}`} render={() => index <= firstAvailableStepIndex ?
+          steps.map( (step, index) => <Route exact path={`${origin}/${step.link}`} render={() => index <= firstAvailableStepIndex ?
             <FlowControllerStep
               component={step.component}
               isCompleted={step.isCompleted}
@@ -58,7 +60,7 @@ const FlowController = ({
               onFinishClick={onFinishClick}
               areAllCompleted={areAllCompleted}
               /> :
-              <Redirect to={`${path}/${steps[firstAvailableStepIndex].link}`} />
+              <Redirect to={`${origin}/${steps[firstAvailableStepIndex].link}`} />
             }
             key={`${step.link}-route`}/>)
           }

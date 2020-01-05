@@ -1,9 +1,7 @@
 import React, {useState} from 'react'
 import {
   BrowserRouter,
-  Route,
   Link,
-  Switch,
 } from 'react-router-dom'
 
 import Button from './Button'
@@ -20,15 +18,7 @@ const Example = () => {
   return (
     <div>
       <BrowserRouter>
-        <div style={{display: 'flex',
-          width: '100%', justifyContent: 'space-around',}}>
-          <Link to='/'>Home</Link>
-          <Link to='/example'>Flow Controller Use Case Example</Link>
-        </div>
-        <Switch>
-          <Route exact path='/' component={Home}/>
-          <Route path='/example' component={ExampleValues}/>
-        </Switch>
+        <ExampleValues/>
       </BrowserRouter>
     </div>
   )
@@ -41,13 +31,7 @@ const getValueStyle = color => ({
 
 export default Example
 
-const Home = () => (
-  <div>
-    <h1>Home</h1>
-  </div>
-)
-
-const ExampleValues = ({match}) => {
+const ExampleValues = () => {
 
   const [step1Value, setStep1] = useState(null)
   const [step2Value, setStep2] = useState(null)
@@ -55,7 +39,7 @@ const ExampleValues = ({match}) => {
   return (
     <div>
       <h1>Flow Controller Example</h1>
-      <Link to={`${match.path}/step_1`}>
+      <Link to="step_1">
         <Button
           color="black"
           label="SET VALUES"
