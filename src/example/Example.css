@@ -1,4 +1,4 @@
-.flow-controller-step {
+.flow-controller-root {
   position: absolute;
   background: lightblue;
   border: 1px solid gray;
@@ -28,4 +28,9 @@
 .flow-controller-back-btn, .flow-controller-next-btn, .flow-controller-finish-btn, .flow-controller-btn-disabled {
   padding: .5em;
   border-radius: 5px;
+}
+
+.progress-indicator-root {
+  color: white;
+  background: blue;
 }

@@ -1,7 +1,9 @@
 import React, {useState} from 'react'
 import {
   BrowserRouter,
+  Route,
   Link,
+  Switch,
 } from 'react-router-dom'
 
 import Button from './Button'
@@ -9,54 +11,24 @@ import ExampleStep1 from './ExampleStep1'
 import ExampleStep2 from './ExampleStep2'
 import ExampleStep3 from './ExampleStep3'
 
-import FlowController from '../components/'
+import FlowControllerRenderer from '../components/'
 
 import './Example.css'
 
 const Example = () => {
 
-  const [step1Value, setStep1] = useState(null)
-  const [step2Value, setStep2] = useState(null)
-  const [step3Value, setStep3] = useState(null)
-
   return (
-    <div className="example-flow-controller">
+    <div>
       <BrowserRouter>
-        <h1>Flow Controller Example</h1>
-        <Link to="/step_1">
-          <Button
-            color="black"
-            label="SET VALUES"
-            background="light-gray"/>
-        </Link>
-        <h2>Step 1 Value</h2>
-        <div style={step1Value && getValueStyle(step1Value.color)}>{step1Value ? step1Value.label : "?"}</div>
-        <h2>Step 2 Value</h2>
-        <div style={step2Value && getValueStyle(step2Value.color)}>{step2Value ? step2Value.label : "?"}</div>
-        <h2>Step 3 Value</h2>
-        <div style={step3Value && getValueStyle(step3Value.color)}>{step3Value ? step3Value.label : "?"}</div>
-        <FlowController
-          steps={[
-            {
-              component: ExampleStep1({setStep1}),
-              label: 'Step 1',
-              link: 'step_1',
-              isCompleted: step1Value !== null,
-            },
-            {
-              component: ExampleStep2({setStep2}),
-              label: 'Step 2',
-              link: 'step_2',
-              isCompleted: step2Value !== null,
-            },
-            {
-              component: ExampleStep3({setStep3}),
-              label: 'Step 3',
-              link: 'step_3',
-              isCompleted: step3Value !== null,
-            },
-          ]}
-          />
+        <div style={{display: 'flex',
+          width: '100%', justifyContent: 'space-around',}}>
+          <Link to='/'>Home</Link>
+          <Link to='/example'>Flow Controller Use Case Example</Link>
+        </div>
+        <Switch>
+          <Route exact path='/' component={Home}/>
+          <Route path='/example' component={ExampleValues}/>
+        </Switch>
       </BrowserRouter>
     </div>
   )
@@ -68,3 +40,54 @@ const getValueStyle = color => ({
 })
 
 export default Example
+
+const Home = () => (
+  <div>
+    <h1>Home</h1>
+  </div>
+)
+
+const ExampleValues = ({match}) => {
+
+  const [step1Value, setStep1] = useState(null)
+  const [step2Value, setStep2] = useState(null)
+  const [step3Value, setStep3] = useState(null)
+  return (
+    <div>
+      <h1>Flow Controller Example</h1>
+      <Link to={`${match.path}/step_1`}>
+        <Button
+          color="black"
+          label="SET VALUES"
+          background="light-gray"/>
+      </Link>
+      <h2>Step 1 Value</h2>
+      <div style={step1Value && getValueStyle(step1Value.color)}>{step1Value ? step1Value.label : "?"}</div>
+      <h2>Step 2 Value</h2>
+      <div style={step2Value && getValueStyle(step2Value.color)}>{step2Value ? step2Value.label : "?"}</div>
+      <h2>Step 3 Value</h2>
+      <div style={step3Value && getValueStyle(step3Value.color)}>{step3Value ? step3Value.label : "?"}</div>
+      <FlowControllerRenderer
+        steps={[
+          {
+            component: ExampleStep1({setStep1}),
+            label: 'Step 1',
+            link: 'step_1',
+            isCompleted: step1Value !== null,
+          },
+          {
+            component: ExampleStep2({setStep2}),
+            label: 'Step 2',
+            link: 'step_2',
+            isCompleted: step2Value !== null,
+          },
+          {
+            component: ExampleStep3({setStep3}),
+            label: 'Step 3',
+            link: 'step_3',
+            isCompleted: step3Value !== null,
+          },
+        ]}/>
+    </div>
+  )
+}

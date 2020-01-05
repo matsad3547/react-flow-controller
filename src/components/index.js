@@ -1,3 +1,3 @@
-import FlowController from './FlowController'
+import FlowControllerRenderer from './FlowControllerRenderer'
 
-export default FlowController
+export default FlowControllerRenderer
