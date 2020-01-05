@@ -8,6 +8,7 @@ const FlowControllerStep = ({
   isLast,
   onBackClick,
   onNextClick,
+  areAllCompleted,
   onFinishClick,
 }) => {
 
@@ -25,8 +26,8 @@ const FlowControllerStep = ({
           isLast ?
           <button
             type="button"
-            className={isCompleted ? 'flow-controller-finish-btn' : 'flow-controller-btn-disabled'}
-            disabled={!isCompleted}
+            className={areAllCompleted ? 'flow-controller-finish-btn' : 'flow-controller-btn-disabled'}
+            disabled={!areAllCompleted}
             onClick={onFinishClick}>FINISH</button> :
           <button
             type="button"

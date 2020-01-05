@@ -33,7 +33,6 @@ const FlowController = ({
       <FlowControllerSteps
         steps={steps}
         />
-
     </div>
   )
 }

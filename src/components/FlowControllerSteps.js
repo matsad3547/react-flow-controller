@@ -26,6 +26,10 @@ const FlowControllerSteps = ({
     history.push('/')
   }
 
+  const firstCompletedStep = steps.filter( step => step.isCompleted ).pop()
+
+  const areAllCompleted = steps.every( step => step.isCompleted)
+
   return (
     <Switch>
       {
@@ -38,6 +42,7 @@ const FlowControllerSteps = ({
             onBackClick={() => onBackClick(index)}
             onNextClick={() => onNextClick(index)}
             onFinishClick={onFinishClick}
+            areAllCompleted={areAllCompleted}
           />
         }
         key={`${step.link}-route`}/>)
