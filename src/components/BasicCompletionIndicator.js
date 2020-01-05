@@ -9,7 +9,7 @@ const BasicCompletionIndicator = ({isCompleted}) => {
 }
 
 BasicCompletionIndicator.propTypes = {
-  isComplete: PropTypes.bool.isRequired
+  isCompleted: PropTypes.bool.isRequired
 }
 
 export default BasicCompletionIndicator
